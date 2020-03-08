@@ -15,9 +15,9 @@ Quick start
 -----------
 
 If you are only looking to install the python package, use:
-- pip install db-accounting
+- pip install db-accounting (under maintenance, resolving with Python Packaging Authority)
 - download the .tar file from Github
-- install it from DjangoPackages.org
+- install it from DjangoPackages.org (pending PyPi issue mentioned above)
 
 To configure:
 
