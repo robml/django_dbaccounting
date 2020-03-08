@@ -1,0 +1,26 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h1>Account: {{ account.id }}</h1>
+
+  <p><strong>Name:</strong> <a href="">{{ account.name }}</a></p>
+  <p><strong>Type:</strong> <a href="{% url 'acctype-detail' account.acc_type.pk %}">{{account.acc_type.name}}</a></p>
+  <p><strong>Balance:</strong> {{account.balance}}</p>
+  <p><strong>Created:</strong> {{ account.date_create }}</p>  
+
+  <div style="margin-left:20px;margin-top:20px">
+    <h4>Recent Transactions</h4>
+
+    {% for txn in account.transaction_set.all %}
+      <hr>
+      <p>{{txn.date}}</p>
+      <p class="{% if txn.to_acc == account %}text-success{% else %}text-danger{% endif %}">
+        {{ txn.amount }}
+      </p>
+      <p>From: {{txn.from_acc.name}}</p>
+      <p>To: {{txn.to_acc.name}}</p>
+      <p class="text-muted"><strong>Id:</strong> {{ txn.id }}</p>
+    {% endfor %}
+    <p><a href="">See All</a></p>
+  </div>
+{% endblock %}

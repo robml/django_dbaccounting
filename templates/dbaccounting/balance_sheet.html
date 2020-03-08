@@ -1,0 +1,14 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+<h1>Balance Sheet on {{date}}</h1>
+<table>
+    {% for type in acc_type %}
+    <tr><th>type.name</th></tr>
+    {% for acc in accs %}
+    {% if acc.acc_type.name%}
+    {%endif%}
+    {% endfor %}
+    {% endfor %}
+</table>
+{% endblock %}

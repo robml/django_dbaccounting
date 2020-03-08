@@ -1,0 +1,31 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h1>Transaction List</h1>
+  <p><a href="{% url 'txn_create' %}">Create New</a></p>
+  {% if transaction_list %}
+  <div class='data-list'>
+    <table>
+      <th>
+        <td><strong>Date</strong></td>
+        <td><strong>Amount</strong></td>
+        <td><strong>From</strong></td>
+        <td><strong>To</strong></td>
+      </th>
+      {% for txn in transaction_list %}
+      {% if not txn.edited %}
+      <tr>
+        <td><a href="{% url 'txn-detail' txn.pk %}">{{ txn.id }}</a></td>
+        <td>{{txn.date}}</td>
+        <td>AED {{txn.amount}}</td>
+        <td><a href="{% url 'acc-detail' txn.from_acc.pk %}">{{txn.from_acc}}</a></td>
+        <td><a href="{% url 'acc-detail' txn.to_acc.pk %}">{{txn.to_acc}}</a></td>
+      </tr>
+      {% endif %}
+      {% endfor %}
+    </table>
+  </div>
+  {% else %}
+    <p>There are no transactions in the database.</p>
+  {% endif %}       
+{% endblock %}

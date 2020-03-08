@@ -1,0 +1,21 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+<h1>Transaction: {{ transaction.id }}</h1>
+
+<p><strong>Date:</strong>{{transaction.date }}</p>
+<p><strong>From:</strong><a href="{% url 'acc-detail' transaction.from_acc.pk %}"> {{ transaction.from_acc.name }}</a></p>
+<p><strong>To:</strong><a href="{% url 'acc-detail' transaction.to_acc.pk %}"> {{ transaction.to_acc.name }}</a></p> 
+<p><strong>Amount:</strong> {{ transaction.amount }} AED</p> 
+{% if transaction.note %}
+<p><strong>Note:</strong>
+  {{ transaction.note }}
+</p>
+{% endif %}
+{% if transaction.updating %}
+<p><strong>Updated From:</strong> <a href="{%url 'txn-detail' transaction.updating.pk%}">{{transaction.updating}}</a></p>
+{% endif %}
+<hr/>
+<p><strong><a href="{% url 'txn_update' transaction.pk %}">Update</a></strong></p>
+<p><strong><a href="{% url 'txn_delete' transaction.pk %}">Delete</a></strong></p>
+{% endblock %}

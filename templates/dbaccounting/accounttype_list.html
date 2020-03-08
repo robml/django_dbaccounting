@@ -1,0 +1,23 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h1>Account Type List</h1>
+  <p><a href="{% url 'acctype_create' %}">Create New</a></p>
+  {% if accounttype_list %}
+  <div class="data-list">
+  <table>
+    {% for type in accounttype_list %}
+    <tr>
+      <td>{{type.id}}</td>
+      <td><a href="{% url 'acctype-detail' type.pk %}">{{ type.name }}</a></td>
+      <td>{{type.bal_type}}</td>
+      <td><a href="{% url 'acctype_update' type.pk %}">Update</a></td>
+      <td><a href="{% url 'acctype_delete' type.pk %}">Remove</a></td>
+    </tr>
+    {% endfor %}
+  </table>
+  </div>
+  {% else %}
+    <p>There are no account types in the database.</p>
+  {% endif %}       
+{% endblock %}

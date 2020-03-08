@@ -1,0 +1,23 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h1>Account List</h1>
+  <p><a href="{% url 'acc_create' %}">Create New</a></p>
+  {% if account_list %}
+  <div class='data-list'>
+    <table>
+      {% for acc in account_list %}
+      <tr>
+        <td>{{acc.id}}</td>
+        <td><a href="{% url 'acc-detail' acc.pk %}">{{ acc.name }}</a></td>
+        <td>{{acc.balance}}</td>
+        <td><a href="{% url 'acc_update' acc.pk %}">Update</a></td>
+        <td><a href="{% url 'acc_delete' acc.pk %}">Remove</a></td>
+      </tr>
+      {% endfor %}
+    </table>
+  </div>
+  {% else %}
+    <p>There are no accounts in the database.</p>
+  {% endif %}       
+{% endblock %}

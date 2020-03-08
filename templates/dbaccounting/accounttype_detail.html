@@ -1,0 +1,18 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h1>Account Type: {{ accounttype.name }}</h1>
+  {% if accounttype.parent %}
+  <p><strong>Parent Account:</strong> <a href="{% url 'acctype-detail' accounttype.parent.pk %}">{{ accounttype.parent.name }}</a></p>
+  {% endif %}
+  <p><strong>Balance Type:</strong> {{ accounttype.bal_type }}</p>
+
+  <div style="margin-left:20px;margin-top:20px">
+    <h4>Accounts</h4>
+
+    {% for acc in accounttype.account_set.all %}
+      <hr>
+      <p><a href="{% url 'acc-detail' acc.pk %}">{{acc.name}}</a> - ({{acc.balance}})</p> 
+    {% endfor %}
+  </div>
+{% endblock %}

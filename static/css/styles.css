@@ -1,0 +1,22 @@
+table {
+    width:100%;
+}
+
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+td,th {
+    padding:15px;
+}
+
+.sidebar-nav {
+    margin-top: 20px;
+    padding: 0;
+    list-style: none;
+}
+
+.data-list { /* This is usually with tables and lists*/
+    overflow-x:auto;
+}

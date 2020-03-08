@@ -1,0 +1,27 @@
+{% extends "base_generic.html" %}
+{% block title %}<title>Fairy Maids Accounts - Index</title>{%endblock%}
+
+{% block content %}
+  <h1>Fairy Maids Accounts</h1>
+  <p>Welcome to the Accounts of Fairy Maids, a webapp developed by <em>Robert Melikyan</em>!</p>
+  <h2>Dynamic content</h2>
+  <p>The database has the following record counts:</p>
+  <ul>
+    <li><strong>Account Types:</strong> {{ acc_types }}</li>
+    <li><strong>Accounts:</strong> {{ accs }}</li>
+    <li><strong>Transactions:</strong> {{ txns }}</li>
+  </ul>
+  <hr/>
+  <h2>Guide</h2>
+  <ul>
+    <li><a href="{% url 'report' %}">Overall Report</a> - a condensed report with all the important details</li>
+    <li><a href="{% url 'balance-sheet' %}">Balance Sheet</a> - a snapshot summary of the current state of all accounts</li>
+    <li><a href="{% url 'income' %}">Income Statement</a> - a monthly summary of total income (broken down by category)</li>
+    <li><a href="{% url 'cashflow' %}">Cashflow Statement</a> - a monthly summary of all cash related transactions</li>
+    <li><a href="{% url 'retained' %}">Retained Earnings</a> - a monthly summary of changes for the entreprise owners</li>
+    <li><a href="{% url 'debt' %}">Debts</a> - a custom report for debt related accounts and expected upcoming payments</li>
+    <li><a href="{% url 'forecast' %}">Forecast</a> - a AI tool predicting the upcoming course of business</li>
+  </ul>
+
+  <p>You have visited this page {{ num_visits }}{% if num_visits == 1 %} time{% else %} times{% endif %}.</p>
+{% endblock %}

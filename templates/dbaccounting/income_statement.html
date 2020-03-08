@@ -1,0 +1,13 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+<h1>Balance Sheet on {{date}}</h1>
+<table>
+    <tr>
+        {% for type in acc_type %}
+        <th>{{type.name}}</th>
+        {% endfor %}
+    </tr>
+    
+</table>
+{% endblock %}
