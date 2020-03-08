@@ -57,4 +57,4 @@ send out insights and goodies from tech, finance, AI and link them to the indivi
 Best,
 Robert M.
 
-reach me on instagram: @officialrobmel or @quantrobbie
+Reach me on instagram: @officialrobmel or @quantrobbie
