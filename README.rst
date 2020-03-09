@@ -1,6 +1,6 @@
-====
+
 DB Accounting
-====
+==============
 
 DB Accounting is a Django app that provides a core for accounting and account management.
 Although developed primarily for accounting purposes, the flexible nature of DB Accounting,

@@ -1,9 +1,8 @@
 # django_dbaccounting
  A Python based accounting core built with Django
 
-====
 DB Accounting
-====
+==============
 
 DB Accounting is a Django app that provides a core for accounting and account management.
 Although developed primarily for accounting purposes, the flexible nature of DB Accounting,
@@ -15,9 +14,9 @@ Quick start
 -----------
 
 If you are only looking to install the python package, use:
-- pip install db-accounting (under maintenance, resolving with Python Packaging Authority)
+- pip install db-accounting
 - download the .tar file from Github
-- install it from DjangoPackages.org (pending PyPi issue mentioned above)
+- install it from DjangoPackages.org
 
 To configure:
 
@@ -58,3 +57,5 @@ Best,
 Robert M.
 
 Reach me on instagram: @officialrobmel or @quantrobbie
+
+See my Github: @robml
