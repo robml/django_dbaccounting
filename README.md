@@ -59,3 +59,6 @@ Robert M.
 Reach me on instagram: @officialrobmel or @quantrobbie
 
 See my Github: @robml
+
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3841987.svg)](https://doi.org/10.5281/zenodo.3841987)
+
